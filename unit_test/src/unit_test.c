@@ -6,7 +6,7 @@
 /*   By: safoh <safoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/26 16:46:15 by safoh         #+#    #+#                 */
-/*   Updated: 2022/06/01 16:20:49 by jobvan-d      ########   odam.nl         */
+/*   Updated: 2022/06/01 16:32:31 by jobvan-d      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,12 @@ Test(Bowling_Tests, Test_Frame_Basic)
 	cr_expect(is_correct_spare(11, 0) == -1, "Bowling frame 11, 0 is invalid");
 	cr_expect(is_correct_spare(-1, 5) == -1, "Bowling frame -1, 5 is invalid");
 	cr_expect(is_correct_spare(5, 6) == -1, "Bowling frame 5, 6 is invalid");
+}
+
+Test(Bowling_Tests, Test_Too_Much_input)
+{
+	int args[21] = {0};
+	cr_expect(input_check(args, 21) == -1, "Too many throws. Can only have up to 20.");
+	cr_expect(input_check(args, 7) == -1, "Too little throws. Need to have at least 10");
+	cr_expect(input_check(args, 16) == 0, "16 Throws should be correct.");
 }
