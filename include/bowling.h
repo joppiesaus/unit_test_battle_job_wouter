@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   bowling.h                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jobvan-d <jobvan-d@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/01 16:17:22 by jobvan-d      #+#    #+#                 */
-/*   Updated: 2022/06/01 16:17:22 by jobvan-d      ########   odam.nl         */
+/*   Created: 2022/06/01 15:53:07 by jobvan-d      #+#    #+#                 */
+/*   Updated: 2022/06/01 16:13:20 by jobvan-d      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bowling.h"
+#ifndef BOWLING_H
+# define BOWLING_H
 
-int	main(int argc, char **argv)
-{
-	return (bowling(argc, argv) == 0);
-}
+int	bowling(int argc, char **argv);
+int is_correct_spare(int first, int second);
+
+#endif
